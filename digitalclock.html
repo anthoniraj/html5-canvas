@@ -1,0 +1,83 @@
+<!--
+    Author: Anthoniraj Amalanathan
+    Date  : 02-03-2013
+    Description - Digital Clock using HTML5 Canvas and JS
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock using HTML5 and JS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            div
+            {
+                width: 600px;
+                height: 300px;
+                margin: 0 auto;                                             
+            }
+            h1
+            {
+                font-family: fantasy;
+                font-size: 20px;
+                text-align: center;
+            }
+            #clock
+            {
+                display: block;
+                width: 500px;
+                height: 200px;
+                margin: 0 auto;
+                background: #E3F2E1;
+                border: 2px solid #FA8072;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Digital Clock using HTML5 and JS</h1>
+            <canvas id="clock"></canvas>
+            <script>
+                var context;
+                var d;
+                var str;
+                function getClock()
+                {
+
+                    //Get Current Time
+                    d = new Date();
+                    str = prefixZero(d.getHours(), d.getMinutes(), d.getSeconds());
+
+                    //Get the Context 2D or 3D
+                    context = clock.getContext("2d");
+                    context.clearRect(0, 0, 500, 200);
+                    context.font = "60px Arial";
+                    context.fillStyle = "green";
+                    context.fillText(str, 35, 90);
+
+                }
+                
+                function prefixZero(hour, min, sec)
+                {
+                     var curTime;
+                     if(hour < 10)
+                        curTime = "0"+hour.toString();
+                     else
+                        curTime = hour.toString(); 
+                    
+                     if(min < 10)
+                        curTime += ":0"+min.toString();                           
+                     else
+                        curTime += ":"+min.toString();  
+                    
+                     if(sec < 10)
+                        curTime += ":0"+sec.toString();                           
+                     else
+                        curTime += ":"+sec.toString();  
+                    return curTime;
+                }
+                
+                setInterval(getClock, 1000);
+            </script>
+        </div>
+    </body>
+</html>

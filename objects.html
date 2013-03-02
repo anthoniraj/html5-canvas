@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drawing Circle</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #mydrawing
+            {
+                color: green;
+                background: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <canvas id="mydrawing" width="400" height="500" style="border:1px solid #c3c3c3;">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
+            <script>
+                var obj = document.getElementById("mydrawing");
+                var context = obj.getContext("2d");
+                context.beginPath();
+                //For Head
+                context.arc(195, 95, 35, 0, 360);
+
+                //For Body
+                context.rect(120, 150, 150, 200);
+
+                //For Two Legs and Foot
+                context.moveTo(170, 350);
+                context.lineTo(170, 400);
+
+                context.moveTo(220, 350);
+                context.lineTo(220, 400);
+
+                context.moveTo(170, 400);
+                context.lineTo(140, 450);
+
+                context.moveTo(220, 400);
+                context.lineTo(250, 450);
+
+                //For Neck
+                context.moveTo(185, 150);
+                context.lineTo(185, 130);
+
+                context.moveTo(205, 150);
+                context.lineTo(205, 130);
+
+                //For Hand
+                context.moveTo(120, 200);
+                context.lineTo(50, 220);
+
+                context.moveTo(270, 200);
+                context.lineTo(340, 220);
+
+                context.fillStyle = 'yellow';
+                context.fill();
+                
+                context.lineWidth = 4;
+                context.strokeStyle = 'green';
+                context.stroke();               
+         
+            </script>
+        </div>
+    </body>
+</html>
