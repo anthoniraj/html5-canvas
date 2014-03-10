@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+    Author: Anthoniraj Amalanathan
+    Date  : 10/03/2014
+-->
+<html>
+    <head>
+        <title>Bouncing Ball</title>
+        <style>
+            #cs
+            {
+                display: block;
+                border: 5px solid red;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cs" width="600" height="300"></canvas>
+        <script>
+            
+            var x = 100;
+            var y = 50;
+            var dx = 10;
+            var dy = 10;
+            var r = 20
+            function drawCircle()
+            {
+                var canvas = document.getElementById("cs");
+                var cxt = canvas.getContext("2d");
+                cxt.clearRect(0,0,canvas.width,canvas.height)
+                
+                cxt.beginPath();
+                cxt.arc(x,y,r,0,2*Math.PI,false);
+                cxt.lineWidth = 5;
+                cxt.fillStyle = "#087e28";
+                cxt.fill();
+
+                
+                // reverse direction
+                if (x + dx + r  > width || x + dx - r  < 0 )
+                    dx = -mx;
+                if (y + dy + r > height || y + dy - r < 0)
+                    dy = -dy;
+                //increment x and y positions
+                x += dx;
+                y += dy;
+            }    
+            setInterval(drawCircle,10);
+            
+        </script>
+    </body>
+</html>
