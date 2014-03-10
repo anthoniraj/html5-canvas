@@ -1,6 +1,6 @@
 <!--
     Author: Anthoniraj Amalanathan
-    Date  : 02-03-2013
+    Date Modified  : 11-03-2014
     Description - Digital Clock using HTML5 Canvas and JS
 -->
 <!DOCTYPE html>
@@ -17,25 +17,22 @@
             }
             h1
             {
-                font-family: fantasy;
                 font-size: 20px;
                 text-align: center;
             }
             #clock
             {
                 display: block;
-                width: 500px;
-                height: 200px;
                 margin: 0 auto;
                 background: #E3F2E1;
-                border: 2px solid #FA8072;
+                border: 2px solid #FA8072;                
             }
         </style>
     </head>
     <body>
         <div>
             <h1>Digital Clock using HTML5 and JS</h1>
-            <canvas id="clock"></canvas>
+            <canvas id="clock" width="500" height="200"></canvas>
             <script>
                 var context;
                 var d;
@@ -52,7 +49,7 @@
                     context.clearRect(0, 0, 500, 200);
                     context.font = "60px Arial";
                     context.fillStyle = "green";
-                    context.fillText(str, 35, 90);
+                    context.fillText(str, 140, 110);
 
                 }
                 
